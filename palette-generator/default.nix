@@ -27,7 +27,7 @@ in stdenvNoCC.mkDerivation {
   name = "palette-generator";
 
   src = ./.;
-  nativeBuildInputs = lib.optional stdenv.isDarwin darwin.ctools;
+  nativeBuildInputs = lib.optional stdenv.isDarwin darwin.cctools;
   buildInputs = [ ghc ];
 
   buildPhase = ''
