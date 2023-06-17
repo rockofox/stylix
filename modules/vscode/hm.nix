@@ -29,6 +29,8 @@ in {
         workbench.colorTheme = "Stylix";
         terminal.integrated.fontFamily = "'${monospace.name}'";
         editor.fontFamily = "'${monospace.name}'";
+        editor.fontSize = sizes.terminal;
+        terminal.integrated.fontSize = sizes.terminal;
       };
     };
   };
