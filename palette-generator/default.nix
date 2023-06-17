@@ -1,4 +1,4 @@
-{ lib, haskellPackages, stdenvNoCC }:
+{ lib, stdenv, haskellPackages, stdenvNoCC }:
 
 let
   ghc = haskellPackages.ghcWithPackages (ps: with ps; [
