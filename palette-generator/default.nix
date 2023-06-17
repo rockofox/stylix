@@ -1,4 +1,4 @@
-{ haskellPackages, stdenvNoCC }:
+{ lib, haskellPackages, stdenvNoCC }:
 
 let
   ghc = haskellPackages.ghcWithPackages (ps: with ps; [
@@ -12,6 +12,8 @@ let
     name = "palette-generator-haddock";
 
     src = ./.;
+
+    nativeBuildInputs = lib.optional stdenv.isDarwin darwin.ctools;
     buildInputs = [ ghc ];
 
     buildPhase = ''
@@ -25,6 +27,7 @@ in stdenvNoCC.mkDerivation {
   name = "palette-generator";
 
   src = ./.;
+  nativeBuildInputs = lib.optional stdenv.isDarwin darwin.ctools;
   buildInputs = [ ghc ];
 
   buildPhase = ''
